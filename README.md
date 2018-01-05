@@ -51,6 +51,7 @@ To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple
 		1. `sudo ls -Ra *`
 		1. Look in any directories which show up for media files/tools and/or "hacking tools."
 	1. Enforce  Password Requirements.
+		1. **IMPORTANT** Change all passwords to satisfy the rules below, If you dont you will NOT be able to login.
 		1. Add or change password expiration requirements to `/etc/login.defs`.
 			
 			```
@@ -64,9 +65,7 @@ To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple
 		1. Implement an account lockout policy.
 			1. Open `/etc/pam.d/common-auth`.
 			1. Add `deny=5 unlock_time=1800` to the end of the line with `pam_tally2.so` in it.
-		1. Change all passwords to satisfy these requirements.
-			
-			`chpasswd` is very useful for this purpose.
+
 
 1. Enable automatic updates
 	
