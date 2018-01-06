@@ -51,7 +51,7 @@ To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple
 		1. `sudo ls -Ra *`
 		1. Look in any directories which show up for media files/tools and/or "hacking tools."
 	1. Enforce  Password Requirements.
-		1. **IMPORTANT** Change all passwords to satisfy the rules below, If you dont you will NOT be able to login.
+		1. **IMPORTANT** Change all passwords to satisfy the rules below, If you don't you will NOT be able to login.
 		1. Add or change password expiration requirements to `/etc/login.defs`.
 			
 			```
