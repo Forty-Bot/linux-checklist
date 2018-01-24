@@ -93,7 +93,7 @@ To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple
 	1. Enable syn cookie protection
 	
 		`sysctl -n net.ipv4.tcp_syncookies`
-	1. Disable IPv6 (WARNING: Potentially danger! READ THE README)
+	1. Disable IPv6 (Potentially harmful)
 	
 		`sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf`
 	1. Disable IP Forwarding
