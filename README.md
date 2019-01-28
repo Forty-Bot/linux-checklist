@@ -98,13 +98,13 @@ To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple
 		`sysctl -n net.ipv4.tcp_syncookies`
 	1. Disable IPv6 (Potentially harmful)
 	
-		`sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf`
+		`echo "net.ipv6.conf.all.disable_ipv6 = 1" | sudo tee -a /etc/sysctl.conf`
 	1. Disable IP Forwarding
 		
-		`sudo echo 0 > /proc/sys/net/ipv4/ip_forward`
+		`echo 0 | sudo tee /proc/sys/net/ipv4/ip_forward`
 	1. Prevent IP Spoofing
 	
-		`sudo echo "nospoof on" >> /etc/host.conf`
+		`echo "nospoof on" | sudo tee -a /etc/host.conf`
 
 1. Install Updates
 
