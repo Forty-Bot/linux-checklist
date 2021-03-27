@@ -63,7 +63,7 @@ To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple
 			1. Add `minlen=8` to the end of the line that has `pam_unix.so` in it.
 			1. Add `remember=5` to the end of the line that has `pam_unix.so` in it.
 			1. Locate the line that has pam.cracklib.so in it. If you cannot find that line, install cracklib with `sudo apt-get install libpam-cracklib`.
-			1. Add `ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-` to the end of that line.
+			1. Add `ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1` to the end of that line.
 		3. Implement an account lockout policy.
 			1. Open `/etc/pam.d/common-auth`.
 			2. Add `deny=5 unlock_time=1800` to the end of the line with `pam_tally2.so` in it.
