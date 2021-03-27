@@ -12,6 +12,8 @@ When the order of steps does not matter, bullet points have been used instead of
 
 To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple command-line editor; or `vim`, a powerful  but less intuitive command-line editor. Note that vim may need to be installed with `apt-get install vim`.
 
+If you don't want to type sudo every time, you can switch to the root user with `sudo -s`
+
 ## Checklist
 
 1. Read the readme
@@ -76,10 +78,9 @@ To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple
 	In the GUI set Update Manager->Settings->Updates->Check for updates:->Daily.
 
 1. Secure ports
-	1. `sudo ss -ln`
-	1. If a port has `127.0.0.1:$port` in its line, that means it's connected to loopback and isn't exposed. Otherwise, there should only be ports which are specified in the readme open (but there probably will be tons more).
-	1. For each open port which should be closed:
-		1. `sudo lsof -i :$port`
+	1. `sudo netstat -ntulp`
+	4. If a port has `127.0.0.1:$port` in its line, that means it's connected to loopback and isn't exposed. Otherwise, there should only be ports which are specified in the readme open (but there probably will be tons more).
+	5. For each open port which should be closed:
 		1. Copy the program which is listening on the port.
 		`whereis $program`
 		1. Copy where the program is (if there is more than one location, just copy the first one).
@@ -87,7 +88,7 @@ To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple
 		1. This shows which package provides the file (If there is no package, that means you can probably delete it with `rm $location; killall -9 $program`).
 		`sudo apt-get purge $package`
 		1. Check to make sure you aren't accidentally removing critical packages before hitting "y".
-		1. `sudo ss -l` to make sure the port actually closed.
+		1. `sudo netstat -ntulp` to make sure the port actually closed.
 
 1. Secure network
 	1. Enable the firewall
